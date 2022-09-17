@@ -1,0 +1,43 @@
+-- creates sounscape with Haskell based TidalCycles
+
+-- the following code creates a natural soundscape using the built in library from Supercollider
+-- Tidalcycles has 6 channels ( declared with d#) by default
+
+-- to evaluate each line of code press keys shift + enter
+
+-- for each of the following lines, the first part before the $ explains the output and how the sound transitions into the output
+-- the infomation after the first $ is the track and how the pattern of that track is defined
+-- the information after the # defines how the pattern will be modulater (sound speed etc)
+
+-- high metallic sound that fades in to channel 2
+xfade 1 $ s "tink" <| n (run 4) # speed 0.125 # gain 0.7
+
+xfade 2 $ s "tink" <| n (run 6) # speed 0.125 # gain 0.7
+
+-- zen music like sounds
+xfade 5 $ slow 4 $ s "em2 ?" <| n (run 6) # gain 0.5
+
+-- bird sounds (this will overide the first command since it outputs to channel 1)
+d1 $ slow 6 $ s "birds" <| n (run 10) # gain "0.6" # pan (slow 1 saw) -- bird
+
+-- four kick sounds
+d3 $ s "tok ?" <| n (run 6) # gain 0.7
+
+-- fire cracling sound
+d4 $ slow 5 $ s "fire" # gain "0.6"-- fire
+
+-- low toms sounds that run 1 per cycle
+d3 $ fast 2 $ s "808lt?" <| n (run 1) # gain "0.7"
+
+-- silences specified channel
+-- order is the recommended way to stop the sounds
+d6 silence
+d2 silence
+d3 silence
+d5 silence
+d4 silence
+d1 silence
+
+
+-- stops all channels
+hush
