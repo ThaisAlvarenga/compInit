@@ -26,7 +26,7 @@ movingKaleido = () => voronoi().color(0.5,1,1).kaleid(()=>6+Math.sin(time)*9).ou
 //when the divisions of the voronoi are small, they create particle systems
 
 //particle system that looks like fireflies
-fireflies = () => voronoi(20,4,5).color(120,2,0).brightness(0,200).out(o3)
+fireflies = () => voronoi(20,4,5).color(120,2,0).brightness(0,200).out(o2)
 
 waterCircle = () => shape(2).color(1,1,0.5)
                       .rotate(({time})=> (time%360)/2)
