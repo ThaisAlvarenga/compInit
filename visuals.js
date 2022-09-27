@@ -20,6 +20,7 @@ galaxy = () => voronoi(100,3,5).brightness(.5)
                   .out(o0) // the out() function renders the code on one of the channels of hydra
                   //by default hydra has 4 channels
 
+
 //kaleidoscope movement in
 movingKaleido = () => voronoi().color(0.5,1,1).kaleid(()=>6+Math.sin(time)*9).out(o1)
 
